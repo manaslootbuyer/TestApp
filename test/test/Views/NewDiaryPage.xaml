@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:res="clr-namespace:test.Resources;assembly=test"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             xmlns:base="clr-namespace:MvvmAspire.Controls;assembly=MvvmAspire"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="test.Views.NewDiaryPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+             <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Orientation="Horizontal" Padding="20,0">
+            <!-- todo Add close icon-->
+             <Image HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" />
+
+          <Label Text="{x:Static res:Strings.NewDiary}" TextColor="White" FontSize="Title" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.Gray}">
+            <StackLayout Orientation="Horizontal" Spacing="20" BackgroundColor="White" Padding="15,0" HeightRequest="45">
+                <Image HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Source="{x:Static res:Images.PinIco}"/>
+
+                <Label Text="{Binding Location}" TextColor="Gray" FontSize="Small" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Padding="15" Spacing="20">
+                 <Grid>
+                    <Label Text="{x:Static res:Strings.AddSiteDiary}" TextColor="black" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Image VerticalOptions="Center" HeightRequest="25" WidthRequest="25" />
+                 </Grid>
+
+                <yummy:PancakeView  BackgroundColor="White" 
+                               HorizontalOptions="FillAndExpand"  CornerRadius="5">
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow  Color="Black" />
+                    </yummy:PancakeView.Shadow>
+
+                     <StackLayout Padding="15" Spacing="15">
+                          <Label Text="{x:Static res:Strings.AddSiteDiary}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                          <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
+                            <!--If i have more time ill create dynamic expandable editor -->
+                          <ScrollView Orientation="Horizontal" HeightRequest="100">
+                              <StackLayout x:Name="PhotoHolder" Orientation="Horizontal">
+
+                              </StackLayout>
+                          </ScrollView>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+                           <Button Text="{x:Static res:Strings.AddAPhoto}" Command="{Binding AddPhotoCommand}" />
+
+                          <Grid>
+                          <Label Text="{x:Static res:Strings.IncludesPhoto}" TextColor="Gray" FontSize="Small" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                               <input:CheckBox Color="{x:Static res:Colors.Green}" HorizontalOptions="End" Type="Material"/>
+                        </Grid>
+                      </StackLayout>
+
+                </yummy:PancakeView>
+
+
+                  <yummy:PancakeView  BackgroundColor="White"
+                               HorizontalOptions="FillAndExpand"  CornerRadius="5">
+
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow  Color="Black" />
+                    </yummy:PancakeView.Shadow>
+
+                      <StackLayout Padding="15" Spacing="15">
+                          <Label Text="{x:Static res:Strings.Comments}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                          <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
+                            <!--If i have more time ill create dynamic expandable editor -->
+                          <Editor Placeholder="Comments" FontSize="Small" HeightRequest="100"/>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+                      </StackLayout>
+                  
+
+                </yummy:PancakeView>
+
+                 <yummy:PancakeView  BackgroundColor="White" 
+                               HorizontalOptions="FillAndExpand"  CornerRadius="5">
+
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow  Color="Black" />
+                    </yummy:PancakeView.Shadow>
+
+                    <StackLayout Padding="15" Spacing="15">
+                          <Label Text="{x:Static res:Strings.Details}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                          <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
+
+                        <Grid>
+                            <DatePicker FontSize="Small" VerticalOptions="Center"></DatePicker>
+                            <Image HorizontalOptions="End" VerticalOptions="Center" HeightRequest="18" WidthRequest="18" Source="{x:Static res:Images.DownArrowIco}"/>
+                        </Grid>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+
+                        <Grid>
+
+                            <!--If i have more time ill use combobox instead of picker-->
+                             <Picker HorizontalOptions="FillAndExpand" FontSize="Small">
+                                <Picker.Items>
+                                    <x:String>New South Wales</x:String> 
+                                    <x:String>Queensland</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Image HorizontalOptions="End" VerticalOptions="Center" HeightRequest="18" WidthRequest="18" Source="{x:Static res:Images.DownArrowIco}"/>
+
+                        </Grid>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+
+
+                         <Grid>
+
+                            <!--If i have more time ill use combobox instead of picker-->
+                             <Picker HorizontalOptions="FillAndExpand" FontSize="Small">
+                                <Picker.Items>
+                                    <x:String>Task Category 1</x:String> 
+                                    <x:String>Task Category 2</x:String>
+                                </Picker.Items>
+                            </Picker>
+                             <Image HorizontalOptions="End" VerticalOptions="Center" HeightRequest="18" WidthRequest="18" Source="{x:Static res:Images.DownArrowIco}"/>
+
+                        </Grid>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+
+
+                          <Grid>
+                             <Entry Placeholder="{x:Static res:Strings.Tags}" FontSize="Small"></Entry>
+                        </Grid>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}"  HeightRequest="1"/>
+                      </StackLayout>
+
+                </yummy:PancakeView>
+
+
+                 <yummy:PancakeView  BackgroundColor="White" 
+                               HorizontalOptions="FillAndExpand" CornerRadius="5">
+
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow  Color="Black" />
+                    </yummy:PancakeView.Shadow>
+
+                    <StackLayout Padding="15" Spacing="15">
+                        <Grid>
+                          <Label Text="{x:Static res:Strings.LinkToExisting}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                               <input:CheckBox Color="{x:Static res:Colors.Green}" HorizontalOptions="End" Type="Material"/>
+                        </Grid>
+                          <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
+
+                        
+
+                        <Grid>
+
+                            <!--If i have more time ill use combobox instead of picker-->
+                             <Picker HorizontalOptions="FillAndExpand" FontSize="Small">
+                                <Picker.Items>
+                                    <x:String>Sample 1</x:String> 
+                                    <x:String>Sample 2</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Image HorizontalOptions="End" VerticalOptions="Center" HeightRequest="18" WidthRequest="18" Source="{x:Static res:Images.DownArrowIco}"/>
+
+                        </Grid>
+                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static res:Colors.BorderGray}" HeightRequest="1"/>
+
+                      </StackLayout>
+
+                </yummy:PancakeView>
+
+
+                <Button Text="{x:Static res:Strings.Next}" />
+
+            </StackLayout>
+        </StackLayout>
+      </ScrollView>
+
+    </Grid>
+    
+</ContentPage>

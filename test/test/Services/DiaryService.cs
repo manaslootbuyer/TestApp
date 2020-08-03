@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MvvmAspire;
+using test.Models;
 
 namespace test.Services
 {
@@ -12,6 +13,13 @@ namespace test.Services
         {
             _dataService = dataService;
            
+        }
+
+
+        public async Task<UserModel> AddDiaryAsync(UserCommand request, CancellationToken cts = default(CancellationToken))
+        {
+            var response = await _dataService.GetResponseAsync<UserModel>("users", cts, WebRequestMethod.POST, request);
+            return response;
         }
     }
 }

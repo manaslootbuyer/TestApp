@@ -118,5 +118,11 @@ namespace test.Resources {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
+        
+        public static string SavedDiary {
+            get {
+                return ResourceManager.GetString("SavedDiary", resourceCulture);
+            }
+        }
     }
 }

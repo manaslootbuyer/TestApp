@@ -7,6 +7,8 @@ namespace test
 {
     public partial class App : Application
     {
+
+        public static readonly string ApiUrl ="https://reqres.in/api";
         public App()
         {
             InitializeComponent();

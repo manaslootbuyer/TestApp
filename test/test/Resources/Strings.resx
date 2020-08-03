@@ -66,4 +66,8 @@
   <data name="Cancel" xml:space="preserve">
       <value>Cancel</value>
     </data>
+    
+      <data name="SavedDiary" xml:space="preserve">
+      <value>Diary has been saved successfully!</value>
+    </data>
 </root>

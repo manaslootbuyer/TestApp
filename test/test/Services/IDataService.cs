@@ -10,7 +10,6 @@ namespace test
     {
         Task<bool> GetSuccess(string endpointName, CancellationToken cts, WebRequestMethod requestMethod, object data = null);
         Task<T> GetResponseAsync<T>(string endpointName, CancellationToken cts, WebRequestMethod requestMethod, object data = null) where T : class;
-        Task<string> GetRawStationsAsync(string endpointName, CancellationToken cts,WebRequestMethod requestMethod);
         event Action<object, ErrorEventArgs> OnNewtorkError;
     }
 }

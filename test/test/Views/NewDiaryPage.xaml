@@ -17,9 +17,9 @@
              <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Orientation="Horizontal" Padding="20,0">
+        <StackLayout Orientation="Horizontal" Spacing="20" Padding="20,0">
             <!-- todo Add close icon-->
-             <Image HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" />
+             <Image HorizontalOptions="Start" VerticalOptions="Center" Source="{x:Static res:Images.CloseIco}" HeightRequest="15" WidthRequest="15" />
 
           <Label Text="{x:Static res:Strings.NewDiary}" TextColor="White" FontSize="Title" VerticalTextAlignment="Center" VerticalOptions="Center"/>
         </StackLayout>
@@ -37,7 +37,7 @@
             <StackLayout Padding="15" Spacing="20">
                  <Grid>
                     <Label Text="{x:Static res:Strings.AddSiteDiary}" TextColor="black" FontSize="Large" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Image VerticalOptions="Center" HeightRequest="25" WidthRequest="25" />
+                    <Image Source="{x:Static res:Images.QuestionIco}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="25" WidthRequest="25" />
                  </Grid>
 
                 <yummy:PancakeView  BackgroundColor="White" 
@@ -50,7 +50,7 @@
                           <Label Text="{x:Static res:Strings.AddSiteDiary}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
                             <!--If i have more time ill create dynamic expandable editor -->
-                          <ScrollView Orientation="Horizontal" HeightRequest="100">
+                          <ScrollView Orientation="Horizontal" HeightRequest="120">
                               <StackLayout x:Name="PhotoHolder" Orientation="Horizontal">
 
                               </StackLayout>
@@ -176,7 +176,7 @@
                 </yummy:PancakeView>
 
 
-                <Button Text="{x:Static res:Strings.Next}" />
+                <Button Text="{x:Static res:Strings.Next}" Command="{Binding SubmitCommand}" />
 
             </StackLayout>
         </StackLayout>

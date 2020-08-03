@@ -158,5 +158,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\down_arrow.png" />
     <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\question.png" />
+    <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\remove.png" />
   </ItemGroup>
 </Project>

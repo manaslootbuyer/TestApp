@@ -50,7 +50,7 @@
                           <Label Text="{x:Static res:Strings.AddSiteDiary}" TextColor="black" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center"/>
                           <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" HeightRequest="1"/>
                             <!--If i have more time ill create dynamic expandable editor -->
-                          <ScrollView Orientation="Horizontal" HeightRequest="120">
+                          <ScrollView Orientation="Horizontal" HeightRequest="117">
                               <StackLayout x:Name="PhotoHolder" Orientation="Horizontal">
 
                               </StackLayout>

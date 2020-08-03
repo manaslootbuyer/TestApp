@@ -76,6 +76,10 @@ namespace test.ViewModels
 
                 ShowMainLoader = false;
             }
+            else
+            {
+                await Page.DisplayAlert("", Strings.PhotoRequired, "Ok");
+            }
             SubmitCommand.CanRun = true;
         }
 

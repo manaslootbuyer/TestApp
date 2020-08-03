@@ -43,7 +43,7 @@ namespace test.Views
             {
 
                 HeightRequest = 120,
-                WidthRequest = 115,
+                WidthRequest = 105,
             };
 
 

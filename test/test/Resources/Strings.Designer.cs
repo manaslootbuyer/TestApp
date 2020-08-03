@@ -124,5 +124,11 @@ namespace test.Resources {
                 return ResourceManager.GetString("SavedDiary", resourceCulture);
             }
         }
+        
+        public static string PhotoRequired {
+            get {
+                return ResourceManager.GetString("PhotoRequired", resourceCulture);
+            }
+        }
     }
 }

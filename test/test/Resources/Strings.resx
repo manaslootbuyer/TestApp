@@ -70,4 +70,8 @@
       <data name="SavedDiary" xml:space="preserve">
       <value>Diary has been saved successfully!</value>
     </data>
+    
+        <data name="PhotoRequired" xml:space="preserve">
+      <value>Photo is required!</value>
+    </data>
 </root>

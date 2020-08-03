@@ -69,12 +69,13 @@ namespace test.ViewModels
                     Name = "Payload Too Large " //Convert.ToBase64String(byteImage)
                 };
                 var user = await _diaryService.AddDiaryAsync(_userCommand);
+                ShowMainLoader = false;
                 if (user != null){
 
                     await Page.DisplayAlert("", Strings.SavedDiary, "Ok");
                 }
 
-                ShowMainLoader = false;
+                
             }
             else
             {

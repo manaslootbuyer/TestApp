@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using MvvmAspire;
+using Acr.UserDialogs;
 
 namespace test.Droid
 {
@@ -24,6 +25,7 @@ namespace test.Droid
             MvvmAspire.Controls.UIHelper.Context = this;
             AppBootstrap.Init();
             Bootstrap.Init(this);
+            UserDialogs.Init(() => (Activity)this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

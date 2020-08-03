@@ -2,18 +2,20 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(DatePicker), typeof(BorderlessDatePickerRenderer))]
+[assembly: ExportRenderer(typeof(Picker), typeof(BorderlessPickerRenderer))]
 namespace test.Droid.Controls
 {
-    public class BorderlessDatePickerRenderer : DatePickerRenderer
+    public class BorderlessPickerRenderer : PickerRenderer
     {
-        public static void Init() { }
-        protected override void OnElementChanged(ElementChangedEventArgs<DatePicker> e)
+          public BorderlessPickerRenderer() { }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Picker> e)
         {
             base.OnElementChanged(e);
             if (e.OldElement == null)
             {
                 Control.Background = null;
+ 
                 var layoutParams = new MarginLayoutParams(Control.LayoutParameters);
                 layoutParams.SetMargins(0, 0, 0, 0);
                 LayoutParameters = layoutParams;
